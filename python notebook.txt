@@ -1,0 +1,221 @@
+**List is a collection which is ordered and changeable. Allows duplicate members.
+**Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+**Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+**Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+List-- []
+* List items are ordered, changeable, and allow duplicate values.
+1. mylist = [ ] = list() = list(('a','b'))->constructor
+2. len(mylist) - To determine how many items in a list
+3. list[1] - access them by referring to the index
+	-1 refers to the last item, -2 refers to the second last item
+	list[2:5]-> Return the third, fourth, and fifth item
+4. list[1] = "a" - Change the second item
+	list[1:3] = ["a"] - Change the second and third value by replacing it with one value
+5. list.insert(2, "watermelon") - Insert "watermelon" as the third item
+6. list.append("orange") - Using the append() method to append an item
+7. list.insert(1, "orange") - Insert an item as the second position
+8. list.extend(tropical) - To append elements from another list to the current list
+9. list.remove("banana") - remove() method removes the specified item(first occurance)
+10. list.pop(1) - Remove the second item
+11. del list[0] - The del keyword also removes the specified index
+	del list - delete the list completely
+12. list.clear() - The clear() method empties the list
+13. 	for x in thislist:
+  		print(x)
+	for i in range(len(thislist)):
+  		print(thislist[i])
+	i = 0
+	while i < len(thislist):
+  		print(thislist[i])
+  		i = i + 1
+
+	[print(x) for x in thislist]
+
+14.	for x in fruits:
+  		if "a" in x:
+    		newlist.append(x)
+	--newlist = [x for x in fruits if "a" in x]
+	newlist = [expression for item in iterable if condition == True]
+
+	newlist = [x for x in range(10)]
+	newlist = [x.upper() for x in fruits]
+	
+	user_input_list = [int(x) for x in input().split()]
+	
+15. list.sort() - sort the list alphanumerically
+16. list.sort(reverse = True) - Sort the list descending
+17. thislist.sort(key = str.lower) 
+	print(thislist) - case-insensitive sort function, use str.lower as a key function
+18. list.reverse() - Reverse the order of the list items
+19. mylist = thislist.copy() or mylist = list(thislist) - Make a copy of a list with the copy() method
+20. list3 = list1 + list2 or list1.extend(list2) - Join two list
+21. count() - Returns the number of elements with the specified value
+22. index()	Returns the index of the first element with the specified value
+23.min() , max() - min value max value
+
+
+Tuples--()
+
+	thistuple = ("apple", "banana", "cherry")
+		if "apple" in thistuple:
+  			print("Yes, 'apple' is in the fruits tuple")
+
+
+1. Convert the tuple into a list to be able to change it:
+
+	x = ("apple", "banana", "cherry")
+	y = list(x)
+	y[1] = "kiwi"
+	x = tuple(y)
+2. Add item also follow same rule
+	thistuple = ("apple", "banana", "cherry")
+	y = list(thistuple)
+	y.append("orange")
+	thistuple = tuple(y)
+3. Remove item also same
+	thistuple = ("apple", "banana", "cherry")
+	y = list(thistuple)
+	y.remove("apple")
+	thistuple = tuple(y)
+ or 
+	thistuple = ("apple", "banana", "cherry")
+	del thistuple
+	print(thistuple) #this will raise an error because the tuple no longer exists
+4. 	fruits = ("apple", "banana", "cherry")
+	mytuple = fruits * 2
+
+
+Sets-- {}
+**A set is a collection which is unordered, unchangeable*,do not allow duplicate values and unindexed.
+Once a set is created, you cannot change its items, but you can remove items and add new items.
+
+1. len(thisset) - determine how many items a set
+2. possible to use the set() constructor to make a set.
+	Once a set is created, you cannot change its items, but you can add new items.
+3. thisset.add("orange") - To add one item to a set use the add() method
+4. thisset.update(myset)
+5. set.remove("banana") / set.discard("banana") - To remove an item in a set, use the remove(), or the discard() method
+6. set.clear() - clear() method empties the set
+7. del thisset - del keyword will delete the set completely
+8. set3 = set1.union(set2) - union() method returns a new set with all items from both sets
+9. set1.update(set2) - update() method inserts the items in set2 into set1
+10. x.intersection_update(y) - intersection_update() method will keep only the items that are present in both sets.
+11. z = x.intersection(y) - Return a set that contains the items that exist in both set x, and set y
+12. x.symmetric_difference_update(y) - symmetric_difference_update() method will keep only the elements that are NOT present in both sets
+13. z = x.symmetric_difference(y) - Return a set that contains all items from both sets, except items that are present in both
+14. difference()	Returns a set containing the difference between two or more sets
+15. difference_update()	Removes the items in this set that are also included in another, specified set
+16. isdisjoint()	Returns whether two sets have a intersection or not
+issubset()	Returns whether another set contains this set or not
+issuperset()	Returns whether this set contains another set or not
+
+
+Dictionaries-- {}
+
+Dictionaries are written with curly brackets, and have keys and values
+1. x = thisdict["model"] / x = thisdict.get("model") - Get the value of the "model" key
+2. keys() / values() / items() 
+3. thisdict.update({"year": 2020}) -  update the dictionary with the items
+4. thisdict["color"] = "red" - Adding an item to the dictionary
+5. thisdict.pop("model") - removes the item with the specified key name
+6. thisdict.popitem() -  removes the last inserted item
+7. del thisdict["model"] - del keyword removes the item with the specified key name
+8. thisdict.clear() - clear() method empties the dictionary
+9. 	for x in thisdict:
+  		print(x)
+	for x in thisdict:
+  		print(thisdict[x])
+	for x in thisdict.values():
+ 		print(x)
+	for x in thisdict.keys():
+  		print(x)
+	for x, y in thisdict.items():
+  		print(x, y)
+10. mydict = thisdict.copy() / mydict = dict(thisdict) - 
+11. myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+
+print(myfamily["child2"]["name"])
+
+
+Strings--
+
+1. a.upper()
+2. a.lower()
+3. a.strip() - removes any whitespace from the beginning or the end
+4. c = a + b - Merge variable a with variable b into variable c
+5. 
+\'	Single Quote	
+\\	Backslash	
+\n	New Line	
+\r	Carriage Return	
+\t	Tab	
+\b	Backspace	
+\f	Form Feed	
+\ooo	Octal value	
+\xhh	Hex value
+
+6. find()	Searches the string for a specified value and returns the position of where it was found
+7. index()	Searches the string for a specified value and returns the position of where it was found
+8. join()	Joins the elements of an iterable to the end of the string
+9. replace()	Returns a string where a specified value is replaced with a specified value
+10. split()	Splits the string at the specified separator, and returns a list
+11. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
